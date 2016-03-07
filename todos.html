@@ -1,0 +1,17 @@
+
+<head>
+    <title>Todos</title>
+</head>
+<body>	 
+
+	 {{#if currentUser}}
+  
+        <p>You're logged in.</p>
+   
+       
+      {{> todos}} 
+    {{else}}
+        {{> register}}
+        {{> login}}
+    {{/if}}
+</body>

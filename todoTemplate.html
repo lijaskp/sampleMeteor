@@ -1,0 +1,84 @@
+<template name="todos">
+     <p><a href="#" class="logout">Logout</a></p>
+    <ul>
+    {{#each todo}}
+        {{> todoItem}}
+    {{/each}}
+    </ul>
+       Name<input type="text" id="addNameText" name="addNameText"> <br>
+     score<input type="text" id="addScoreText" name="addScoreText"><br>
+    <input type="button" id="addButton" name="addButton" value="ADD"><br>
+      <input id="view3Btt" type="button" value="VIEW3" >
+      <input id="view4Btt" type="button" value="VIEW4" >
+</template>
+
+
+
+
+<template name="todoItem">
+    <li>
+        <input type="text" value="{{name}}" name="todoItem">
+        <a href="#" class="delete-todo">Delete</a>
+    </li>
+  
+</template>
+
+
+
+<template name="register">
+    <form id="regForm" class="hidden">
+        <input type="email" name="registerEmail">
+        <input type="password" name="registerPassword">
+        <input type="submit" value="Register">
+    </form>
+</template>
+
+
+
+
+
+
+
+
+<template name="login">
+   <form id="logForm" class="hidden">
+        <input type="email" name="loginEmail">
+        <input type="password" name="loginPassword">
+        <input type="submit" value="Login">
+    </form>
+</template>
+
+
+
+<template name="view3">
+    {{#if currentUser}}
+    {{currentUser}}
+    <div>YOU ARE IN VIEW 3 </div>
+     {{else}}
+   {{ >lognMessage }}
+     {{currentUser}}
+     {{/if}}
+</template>
+
+
+
+
+<template name="view4">
+    {{#if currentUser}}
+    {{currentUser}}
+    <div>you are in view 4 </div>
+     {{else}}
+   {{ >lognMessage }}
+     {{currentUser}}
+     {{/if}}
+    
+</template>
+
+
+
+
+
+
+<template name="lognMessage" >
+    <span>You need to log in </span>
+</template>
